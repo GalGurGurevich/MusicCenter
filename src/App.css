@@ -91,14 +91,21 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  transition: opacity 0.5s ease;
-  opacity: 1;
-  &.fade-out {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  &.fade-in {
+  to {
     opacity: 1;
   }
+}
+
+.image-container.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .player {

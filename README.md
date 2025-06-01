@@ -2,53 +2,39 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hello Priority Team 👋,
 
-## Expanding the ESLint configuration
+Thank you for the opportunity to work on this assignment. Below are a few notes regarding the implementation and my thought process:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📝 Notes & Considerations
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Styling Approach**  
+   Ideally, I would place a dedicated style file next to each component inside the `components/` folder to support modular and maintainable styling.  
+   Due to time constraints, I used a single global stylesheet for this version (`App.css`) for simplicity.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **State Management**  
+   For this scale, React’s built-in state hooks (`useState`, `useEffect`) were sufficient.  
+   However, I can see how a global state management tool (like Redux) could be introduced as the app scales — especially for managing the selected track, search history, view mode, etc.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Testing**  
+   Given more time, I would have added unit and integration tests using a framework like Jest. Testing is good for ensuring long-term stability and confidence during refactors.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+4. **Animations**  
+   I’ve implemented basic entrance/exit animations using DOM cloning and transitions. In general this is an area I’d refine further with a library.
+
+5. **TypeScript**  
+   I would add actual types instead of (`any`) of course, simply due to time and being unfamiliar with the API objects.
+
+## 🛠️ Getting Started
+
+Make sure you have the following installed on your machine:
+
+-   **Node.js** (version 16 or above recommended)  
+    [Download Node.js](https://nodejs.org/)
+
+-   **npm** (comes with Node.js)
+
+npm install
+npm run dev
