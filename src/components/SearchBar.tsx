@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, selectedTrack, setTrack
 
   return (
     <form className="search-container" onSubmit={handleSubmit}>
-      <label htmlFor="track-search" className="sr-only">Search for tracks</label>
+      {/* <label htmlFor="track-search" className="sr-only">Search for tracks</label> */}
       <input
         id="track-search"
         type="text"

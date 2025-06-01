@@ -1,19 +1,53 @@
 .app {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 96vh;
+  background: pink;
+}
+.search_side {
+  flex: 1;
+  border: solid 2px black;
+  padding: 10px;
+}
+.music_center {
+  flex: 1;
+  border: solid 2px black;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+}
+.search_side.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .results.list {
+    flex: 1;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    .layout_buttons {
+      display: flex;
+      gap: 5px;
+    }
+  }
 }
 
 .loader {
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  margin-inline: auto; 
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
 }
 
 .search-container {
   display: flex;
   gap: 10px;
+  height: 2em;
 }
 
 #track-search {
@@ -26,7 +60,14 @@
   gap: 10px;
 }
 
+.results.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .results.tile {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
@@ -34,22 +75,46 @@
 
 .result-item {
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .result-item:hover {
-  transform: scale(1.05);
+  background: white;
+  color: black;
+}
+.recent-searches-item:hover {
+  background: white;
+  color: black;
 }
 
 .image-container {
-  margin-top: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  &.fade-out {
+    opacity: 0;
+  }
+  &.fade-in {
+    opacity: 1;
+  }
+}
+
+.player {
+  margin-top: auto;
 }
 
 .image-container .selected-image {
   max-width: 100%;
   cursor: pointer;
   animation: fadeIn 0.5s ease-in;
+}
+
+.recent-searches {
+  .title {
+    margin-top: unset;
+  }
 }
 
 .recent-searches ul {
@@ -63,7 +128,3 @@
   color: blue;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}

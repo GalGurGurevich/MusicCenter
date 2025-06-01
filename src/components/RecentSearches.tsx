@@ -1,10 +1,10 @@
 
 const RecentSearches = ({ items, onClick }: { items: string[], onClick: (term: string) => void }) => (
   <div className="recent-searches">
-    <h3>Recent Searches</h3>
-    <ul>
+    <h3 className="title">Recent Searches</h3>
+    <ul className="recent-searches-list">
       {items.map((item, i) => (
-        <li key={i} onClick={() => onClick(item)}>{item}</li>
+        <li className="recent-searches-item" key={i} onClick={() => onClick(item)}>{item}</li>
       ))}
     </ul>
   </div>
