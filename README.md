@@ -27,6 +27,9 @@ Thank you for the opportunity to work on this assignment. Below are a few notes 
 5. **TypeScript**  
    I would add actual types instead of (`any`) of course, simply due to time and being unfamiliar with the API objects.
 
+6. **Responsive UI**  
+   I would add and support mobile layout as well.
+
 ## 🛠️ Getting Started
 
 Make sure you have the following installed on your machine:

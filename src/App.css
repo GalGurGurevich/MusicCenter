@@ -5,7 +5,8 @@
   gap: 20px;
   width: 100%;
   height: 96vh;
-  background: pink;
+  background: #f4f6f8;
+  color: #1a1a1a; 
 }
 .search_side {
   flex: 1;
